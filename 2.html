@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <ul class="item">
+            <li class="liactive"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+        </ul>
+        <div class="content active">
+            11
+        </div>
+        <div class="content">
+            22
+        </div>
+        <div class="content">
+            33
+        </div>
+        <div class="content">
+            44
+        </div>
+</div>
+</body>
+</html>
+<style type="text/css" media="screen">
+    #main{
+        width: 200px;
+        height:220px;
+        background:silver;
+    }
+    .item{
+        width: 100%;
+        height: 20px;
+        list-style-type:none;
+    }
+    .item li{
+        float:left;
+        width: 30px;
+    }
+    .content{
+        clear:left;
+        height: 200px;
+        background:red;
+        display: none;
+    }
+    .active{
+        display: block;
+    }
+    .liactive a{
+        text-decoration:none;
+    }
+</style>
+<script>
+    var lis=document.getElementsByTagName('li');
+    var main=document.getElementById('main');
+    var divs=main.getElementsByTagName('div');
+    for(var i=0;i<lis.length;i++){
+        lis[i].index=i;
+        lis[i].onclick=function(){
+            for(var j=0;j<lis.length;j++){
+                lis[j].className="";
+                divs[j].className="content";
+            }
+            lis[this.index].className="liactive";             //this.className="liactive"
+            divs[this.index].className="content active";
+        }
+    }
+
+</script>
