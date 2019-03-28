@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <form action="" method="">
+            <input type="text" name="" id="txt1">
+            <select name="" id='select'>
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input type="text" name="" id='txt2'>
+            <input type='button' value=' = ' onclick = "count()"/>
+            <input type="text" name="" id='res'>
+        </form>
+    </div>
+</body>
+</html>
+
+<style type="text/css" media="screen">
+    *{
+        margin:0;
+        padding:0;
+    }
+</style>
+
+
+<!-- <script type="text/javascript">
+function count(){
+    var txt1=document.getElementById('txt1').value;
+    var txt2=document.getElementById('txt2').value;
+    var select=document.getElementById('select').value;
+    var res=document.getElementById('res');
+    txt1 = parseFloat(txt1);
+    txt2 = parseFloat(txt2);
+    switch(select){
+        case '+':
+            res.value=txt1+txt2;
+            break;
+        case '-':
+            res.value=txt1-txt2;
+            break;
+        case '*':
+            res.value=txt1*txt2;
+            break;
+        case '/':
+            if(txt2!=0){
+               res.value=txt1/txt2;
+            }
+            else{
+               res.value='error';
+            }
+            break;
+        default:
+            res.value='none';
+    }
+}
+</script> -->
+
+
+
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    function count(){
+    var txt1=parseFloat($('#txt1').val());
+    var txt2=parseFloat($('#txt2').val());
+    var select=$('#select').val();
+    switch(select){
+        case '+':
+            $('#res').val(txt1+txt2)
+            break;
+        case '-':
+            $('#res').val(txt1-txt2)
+            break;
+        case '*':
+            $('#res').val(txt1*txt2)
+            break;
+        case '/':
+            if(txt2!=0){
+               $('#res').val(txt1/txt2)
+            }
+            else{
+               $('#res').val('error');
+            }
+            break;
+        default:
+            $('#res').val('none');
+    }
+}
+
+</script>
